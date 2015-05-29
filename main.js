@@ -13,4 +13,3 @@ function create(){
 function update(){
 	
 }
->>>>>>> b68dcebe16fcb6b1643565ba04905c6635ee3775
