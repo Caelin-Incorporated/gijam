@@ -63,6 +63,14 @@ function create(){
 	buttonMin.anchor.setTo(0.5, 0.5);
 	
 	hpBar = main.create(10, 10, 'hp');
+	
+	// Traps button
+	buttonTrap = main.create(940, 640, 'trap');
+	buttonTrap.anchor.setTo(0.5, 0.5);
+	
+	// Challenge a party! button
+	buttonChal = main.create(940, 640, 'challenge');
+	buttonChal.anchor.setTo(0.5, 0.5);
 }
 
 function update(){
