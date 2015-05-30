@@ -1,6 +1,13 @@
 var game = new Phaser.Game(1280, 720, Phaser.AUTO, 'GI Jam', {preload: preload, create: create, update: update});
 var dung;
 var buttonLeft, buttonRight;
+var main;
+
+var states = {
+	MAIN: 0,
+	MENU: 1,
+};
+var state = states.MAIN;
 
 function Dungeon(){
 	this.boss = new Boss();
@@ -33,20 +40,26 @@ function preload(){
 }
 
 function create(){
+	main = game.add.group();
 	dung = new Dungeon();
 	var bossRoom = new Room();
 	bossRoom.monster = dung.boss;
-	bossRoom.sprite = game.add.sprite(128, 128, 'room1');
+	bossRoom.sprite = main.create(128, 128, 'room1');
 	dung.rooms.push(bossRoom);
 	
 	// clicky buttons
-	buttonLeft = game.add.sprite(64, 360, 'arrow');
+	buttonLeft = main.create(64, 360, 'arrow');
 	buttonLeft.anchor.setTo(0.5, 0.5);
 	buttonLeft.scale.x = -1;
 	
+	buttonRight = main.create(1216, 360, 'arrow');
+	buttonRight.anchor.setTo(0.5, 0.5);
 }
 
 function update(){
-	for(var i=0; i < dung.rooms.length; ++i){
+	if(state == states.MAIN){
+		main.visible = true;
+	} else {
+		main.visible = false;
 	}
 }
