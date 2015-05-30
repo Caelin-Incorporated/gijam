@@ -37,7 +37,9 @@ function Room(){
 function preload(){
 	game.load.image('room1', "images/room.png");
 	game.load.image('arrow', "images/arrow.png");
-	game.load.image('minions', "images/minions.png")
+	game.load.image('minions', "images/minions.png");
+	game.load.image('trap', "images/trap.png");
+	game.load.image('challenge', "images/challenge.png")
 }
 
 function create(){
