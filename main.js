@@ -99,7 +99,7 @@ function toBuild (event, sprite) {
 }
 
 function update(){
-	if(state == states.MAIN){
+	if(state == states.BUILD){
 		main.visible = true;
 		hpBar.scale.x = (dung.boss.health/5);
 	} else {
