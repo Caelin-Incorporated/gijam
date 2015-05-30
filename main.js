@@ -2,6 +2,7 @@ var game = new Phaser.Game(1280, 720, Phaser.AUTO, 'GI Jam', {preload: preload, 
 var dung;
 var buttonLeft, buttonRight;
 var main;
+var hpBar;
 
 var states = {
 	MAIN: 0,
@@ -37,7 +38,8 @@ function Room(){
 function preload(){
 	game.load.image('room1', "images/room.png");
 	game.load.image('arrow', "images/arrow.png");
-	game.load.image('minions', "images/minions.png")
+	game.load.image('minions', "images/minions.png");
+	game.load.image('hp', 'images/health.png');
 }
 
 function create(){
@@ -57,13 +59,16 @@ function create(){
 	buttonRight.anchor.setTo(0.5, 0.5);
 	
 	// Minions button
-	buttonMin = game.add.sprite(256, 256, 'minions');
+	buttonMin = main.create(256, 256, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
+	
+	hpBar = main.create(10, 10, 'hp');
 }
 
 function update(){
 	if(state == states.MAIN){
 		main.visible = true;
+		hpBar.scale.x = (dung.boss.health/5);
 	} else {
 		main.visible = false;
 	}
