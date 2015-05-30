@@ -30,6 +30,7 @@ function Room(){
 function preload(){
 	game.load.image('room1', "images/room.png");
 	game.load.image('arrow', "images/arrow.png");
+	game.load.image('minions', "images/minions.png")
 }
 
 function create(){
@@ -39,11 +40,14 @@ function create(){
 	bossRoom.sprite = game.add.sprite(128, 128, 'room1');
 	dung.rooms.push(bossRoom);
 	
-	// clicky buttons
+	// room buttons
 	buttonLeft = game.add.sprite(64, 360, 'arrow');
 	buttonLeft.anchor.setTo(0.5, 0.5);
 	buttonLeft.scale.x = -1;
 	
+	// Minions button
+	buttonMin = game.add.sprite(256, 256. 'minions');
+	buttonMin.anchor.setTo(0.5, 0.5);
 }
 
 function update(){
