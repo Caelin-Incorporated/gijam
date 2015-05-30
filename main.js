@@ -63,7 +63,7 @@ function create(){
 	//Making a new room sprite
 	var newRoom = new Room();
 	newRoom.sprite = main.create(128, 128, 'newroom');
-	newRoom.events.onInputUp.add(makeRoom, this);
+	newRoom.sprite.events.onInputUp.add(makeRoom, this);
 	dung.rooms.push(newRoom);
 	
 	
