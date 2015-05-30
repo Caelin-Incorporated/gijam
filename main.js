@@ -57,8 +57,16 @@ function create(){
 	buttonRight.anchor.setTo(0.5, 0.5);
 	
 	// Minions button
-	buttonMin = game.add.sprite(256, 256, 'minions');
+	buttonMin = main.create(940, 640, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
+	
+	// Traps button
+	buttonTrap = main.create(940, 640, 'trap');
+	buttonTrap.anchor.setTo(0.5, 0.5);
+	
+	// Challenge a party! button
+	buttonChal = main.create(940, 640, 'challenge');
+	buttonChal.anchor.setTo(0.5, 0.5);
 }
 
 function update(){
