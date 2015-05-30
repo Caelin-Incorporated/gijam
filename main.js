@@ -5,10 +5,13 @@ var main;
 var hpBar;
 
 var states = {
-	MAIN: 0,
-	MENU: 1,
+	BUILD: 0,
+	TRAPS: 1,
+	MINIONS: 2,
+	CHALLENGE: 3,
+	INTRO: 4,
 };
-var state = states.MAIN;
+var state = states.BUILD;
 
 function Dungeon(){
 	this.boss = new Boss();
@@ -63,16 +66,36 @@ function create(){
 	// Minions button
 	buttonMin = main.create(940, 640, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
+	buttonMin.events.onInputUp.add(toMinion, this);
 	
 	hpBar = main.create(10, 10, 'hp');
 	
 	// Traps button
 	buttonTrap = main.create(340, 640, 'trap');
 	buttonTrap.anchor.setTo(0.5, 0.5);
+	buttonTrap.events.onInputUp.add(toTraps, this);
 	
 	// Challenge a party! button
 	buttonChal = main.create(640, 640, 'challenge');
 	buttonChal.anchor.setTo(0.5, 0.5);
+	buttonChal.events.onInputUp.add(toChallenge, this);
+}
+
+function toMinion (event, sprite) {
+	
+	
+}
+
+function toTraps (event, sprite) {
+	
+}
+
+function toChallenge (event, sprite) {
+	
+}
+
+function toBuild (event, sprite) {
+	
 }
 
 function update(){
@@ -81,5 +104,11 @@ function update(){
 		hpBar.scale.x = (dung.boss.health/5);
 	} else {
 		main.visible = false;
+	}
+	
+	if (game.input.activePointer.isDown) {
+		if (game.input.activePointer.x) {
+			
+		}
 	}
 }
