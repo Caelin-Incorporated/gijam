@@ -37,6 +37,7 @@ function Room(){
 function preload(){
 	game.load.image('room1', "images/room.png");
 	game.load.image('arrow', "images/arrow.png");
+	game.load.image('minions', "images/minions.png")
 }
 
 function create(){
@@ -54,6 +55,10 @@ function create(){
 	
 	buttonRight = main.create(1216, 360, 'arrow');
 	buttonRight.anchor.setTo(0.5, 0.5);
+	
+	// Minions button
+	buttonMin = game.add.sprite(256, 256. 'minions');
+	buttonMin.anchor.setTo(0.5, 0.5);
 }
 
 function update(){
