@@ -57,7 +57,7 @@ function create(){
 	buttonRight.anchor.setTo(0.5, 0.5);
 	
 	// Minions button
-	buttonMin = game.add.sprite(256, 256. 'minions');
+	buttonMin = game.add.sprite(256, 256, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
 }
 
