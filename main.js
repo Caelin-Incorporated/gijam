@@ -6,6 +6,7 @@ var hpBar;
 var hpText;
 var talkText;
 var currRoomCost;
+var roomlength = 1024;
 
 var states = {
 	BUILD: 0,
@@ -62,7 +63,7 @@ function create(){
 	
 	//Making a new room sprite
 	var newRoom = new Room();
-	newRoom.sprite = main.create(128, 128, 'newroom');
+	newRoom.sprite = main.create(128, 128 + dung.length * roomlength, 'newroom');
 	newRoom.sprite.events.onInputUp.add(makeRoom, this);
 	dung.rooms.push(newRoom);
 	
