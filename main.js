@@ -6,10 +6,13 @@ var hpBar;
 var hpText;
 
 var states = {
-	MAIN: 0,
-	MENU: 1,
+	BUILD: 0,
+	TRAPS: 1,
+	MINIONS: 2,
+	CHALLENGE: 3,
+	INTRO: 4,
 };
-var state = states.MAIN;
+var state = states.BUILD;
 
 function Dungeon(){
 	this.boss = new Boss();
@@ -40,6 +43,8 @@ function preload(){
 	game.load.image('room1', "images/room.png");
 	game.load.image('arrow', "images/arrow.png");
 	game.load.image('minions', "images/minions.png");
+	game.load.image('trap', "images/trap.png");
+	game.load.image('challenge', "images/challenge.png");
 	game.load.image('hp', 'images/health.png');
 }
 
@@ -60,28 +65,54 @@ function create(){
 	buttonRight.anchor.setTo(0.5, 0.5);
 	
 	// Minions button
-	buttonMin = main.create(256, 256, 'minions');
+	buttonMin = main.create(940, 640, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
+	buttonMin.events.onInputUp.add(toMinion, this);
 	
 	hpBar = main.create(128, 10, 'hp');
 	
 	// Traps button
-	buttonTrap = main.create(940, 640, 'trap');
+	buttonTrap = main.create(340, 640, 'trap');
 	buttonTrap.anchor.setTo(0.5, 0.5);
+	buttonTrap.events.onInputUp.add(toTraps, this);
 	
 	// Challenge a party! button
-	buttonChal = main.create(940, 640, 'challenge');
+	buttonChal = main.create(640, 640, 'challenge');
 	buttonChal.anchor.setTo(0.5, 0.5);
 	
 	hpText = game.add.text(10,10,"Health:", {fontSize: '32px', fill:"#FF0000"});
 	main.add(hpText);
+	buttonChal.events.onInputUp.add(toChallenge, this);
+}
+
+function toMinion (event, sprite) {
+	
+	
+}
+
+function toTraps (event, sprite) {
+	
+}
+
+function toChallenge (event, sprite) {
+	
+}
+
+function toBuild (event, sprite) {
+	
 }
 
 function update(){
-	if(state == states.MAIN){
+	if(state == states.BUILD){
 		main.visible = true;
 		hpBar.scale.x = (dung.boss.health/5);
 	} else {
 		main.visible = false;
+	}
+	
+	if (game.input.activePointer.isDown) {
+		if (game.input.activePointer.x) {
+			
+		}
 	}
 }
