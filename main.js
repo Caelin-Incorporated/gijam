@@ -3,6 +3,7 @@ var dung;
 var buttonLeft, buttonRight;
 var main;
 var hpBar;
+var hpText;
 
 var states = {
 	MAIN: 0,
@@ -62,7 +63,7 @@ function create(){
 	buttonMin = main.create(256, 256, 'minions');
 	buttonMin.anchor.setTo(0.5, 0.5);
 	
-	hpBar = main.create(10, 10, 'hp');
+	hpBar = main.create(128, 10, 'hp');
 	
 	// Traps button
 	buttonTrap = main.create(940, 640, 'trap');
@@ -71,6 +72,9 @@ function create(){
 	// Challenge a party! button
 	buttonChal = main.create(940, 640, 'challenge');
 	buttonChal.anchor.setTo(0.5, 0.5);
+	
+	hpText = game.add.text(10,10,"Health:", {fontSize: '32px', fill:"#FF0000"});
+	main.add(hpText);
 }
 
 function update(){
