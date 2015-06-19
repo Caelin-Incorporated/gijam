@@ -3,13 +3,20 @@
 	<head>
 		<meta charset=utf-8>
 		<title>GI Jam</title>
+		Scripts:
+		<script>
+			submittedForm() {
+				document.getElementById("hypediv").style.visibility = "hidden";
+				document.getElementById("WellHyped").style.visibility = "visible";
+			}
+		</script>
 	</head>
 	<body>
 		<div>
 			<h1>Am I hyped for Dark Souls 3?</h1><br><br>
 		</div>
-		<div>
-			<form action="index.php" name="amIhype" method="POST">
+		<div id="hypediv">
+			<form action="" name="amIhype" onsubmit="return false">
 			Yes?<br><br>
 			<input type="radio" name="q1" value="Yes">Yes<br><br>
 			<input type="radio" name="q1" value="Fuck Yes">Fuck Yes<br><br>
@@ -57,9 +64,15 @@
 				<option value="Yes" selected="selected">HYPE</option>
 				<option value="Yes" selected="selected">HYPE</option>
 				<option value="Yes" selected="selected">HYPE</option>
-				<option value="Yes" selected="selected">HYPE</option><br><br>
-			<input type="submit" value="Submit for evaluation"/>
+				<option value="Yes" selected="selected">HYPE</option>
+				<br><br><br><br>
+			<input type="submit" value="Submit for evaluation" onclick="submittedForm()"/>
 			</form>
+		</div>
+		<div id="WellHyped" visibility="hidden">
+			Well hyped, my friend.
+			<a href="http://http://www.reddit.com/r/darksouls3"> The subReddit</a> <br />
+			<a href="http://www.reddit.com/r/darksouls3/comments/3a2o6t/some_169_wallpapers/"> Wallpapers </a> <br />
 		</div>
 	</body>
 </html>
