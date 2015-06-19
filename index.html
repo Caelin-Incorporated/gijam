@@ -6,8 +6,8 @@
 		Scripts:
 		<script>
 			function submittedForm() {
-				document.getElementById("hypediv").style.visibility = "hidden";
-				document.getElementById("WellHyped").style.visibility = "visible";
+				document.getElementById("hypediv").style.display = "none";
+				document.getElementById("WellHyped").style.visibility = "block";
 			}
 		</script>
 	</head>
@@ -69,7 +69,7 @@
 			<input type="submit" value="Submit for evaluation" onclick="submittedForm()"/>
 			</form>
 		</div>
-		<div id="WellHyped" visibility="hidden">
+		<div id="WellHyped" style="display:none">
 			Well hyped, my friend.
 			<a href="http://http://www.reddit.com/r/darksouls3"> The subReddit</a> <br />
 			<a href="http://www.reddit.com/r/darksouls3/comments/3a2o6t/some_169_wallpapers/"> Wallpapers </a> <br />
