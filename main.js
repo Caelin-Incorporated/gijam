@@ -49,6 +49,7 @@ function preload(){
 	game.load.image('trap', "images/trap.png");
 	game.load.image('challenge', "images/challenge.png");
 	game.load.image('hp', 'images/health.png');
+	game.load.image('newroom', 'images/newroom.png');
 }
 
 function create(){
@@ -63,7 +64,7 @@ function create(){
 	
 	//Making a new room sprite
 	var newRoom = new Room();
-	newRoom.sprite = main.create(128, 128 + dung.length * roomlength, 'newroom');
+	newRoom.sprite = main.create(128 + dung.length * roomlength, 128, 'newroom');
 	newRoom.sprite.events.onInputUp.add(makeRoom, this);
 	dung.rooms.push(newRoom);
 	
